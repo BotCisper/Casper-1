@@ -1,4 +1,4 @@
-#⦑ Welcome to Source ⦒ 
+# Welcome to Source
 
 ➺ . Casper TEAM 〠 
 
