@@ -4,7 +4,7 @@
 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 
-➺ . [Source Channel](https://t.me/joinchat/AAAAAE_EW8h1TxSVmPil5w)
+➺ . [Source Channel](https://t.me/joinchat/AAAAAEdNbY3UX8ZQoONI4A)
 
 
 ➺ . [Source Info ](https://t.me/joinchat/AAAAAFQVFmdxgOFzBxq96g)     
