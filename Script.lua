@@ -11,7 +11,7 @@ UserName_Dev = sudos.UserName_Casper
 bot_id = token:match("(%d+)")  
 Id_Dev = sudos.Id_DevCasper
 Ids_Dev = {sudos.Id_DevCasper}
-Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "تيكتوك"
+Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "كاسبر"
 function dl_cb(arg,data)
 -- var(data)  
 end
@@ -350,7 +350,7 @@ height_ = 0
 end
 ------------------------------------------------------------------------------------------------------------
 function tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Casperkid/Casper/master/Script.lua'
+url = 'https://raw.githubusercontent.com/BotCasper/Casper/master/Script.lua'
 file_path = 'Script.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -370,7 +370,7 @@ end
 ------------------------------------------------------------------------------------------------------------ 
 function tdcli_update_callback_value_(Data) 
 tdcli_update_callback_value(Data) 
-url = 'https://raw.githubusercontent.com/Casperkid/Casper/master/Casper.lua'
+url = 'https://raw.githubusercontent.com/BotCasper/Casper/master/Casper.lua'
 file_path = 'Casper.lua'
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
@@ -676,11 +676,11 @@ end
 function Script(msg)
 if TypeForChat == ("ForUser") then
 if text == '/start' then  
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if Dev_Casper(msg) then
 local Text_keyboard = '⌔︙اهلا بك في اوامر الكيبورد الجاهزه'
@@ -1145,11 +1145,11 @@ end;end,nil)
 end
 
 if text == 'جلب نسخه احتياطيه' and Dev_Casper(msg) or text == 'جلب نسخه الكروبات' and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local Groups = redis:smembers(bot_id..'ChekBotAdd')  
 local Get_Json = '{"IdBot": '..bot_id..',"Groups":{'  
@@ -1261,105 +1261,105 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,'./lib/'..bot_id..'.json', '\n⌔︙تم جلب نسخه خاصه بالكروبات\n⌔︙يحتوي الملف على {'..#Groups..'} مجموعه')
 end
 if text == ("مسح قائمه العام") and Dev_Casper(msg) or text == ("مسح المحظورين عام") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Removal:User:Groups")
 send(msg.chat_id_, msg.id_, "⌔︙تم مسح المحظورين عام من البوت")
 elseif text == ("مسح المطورين") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Developer:Bot")
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المطورين من البوت  ")
 elseif text == ("مسح المنشئين الاساسين") and DeveloperBot(msg) or text == "مسح الاساسين" and DeveloperBot(msg)  then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."President:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المنشئين الاساسيين في المجموعه")
 elseif text == ("مسح المنشئين الاساسين") or text == "مسح الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."President:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المنشئين الاساسيين في المجموعه")
 end
 end,nil)
 elseif text == ("مسح المنشئين") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Constructor:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المنشئين في المجموعه")
 elseif text == ("مسح المدراء") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Manager:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المدراء في المجموعه")
 elseif text == ("مسح الادمنيه") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Admin:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح الادمنيه في المجموعه")
 elseif text == ("مسح المميزين") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Vip:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المميزين في المجموعه")
 elseif text == ("مسح المكتومين") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Silence:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙ تم مسح المكتومين في المجموعه")
 elseif text == ("مسح المحظورين") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:del(bot_id.."Removal:User:Group"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "⌔︙تم مسح المحظورين في المجموعه")
 elseif text == "حذف الاوامر المضافه" and Constructor(msg) or text == "مسح الاوامر المضافه" and Constructor(msg) then 
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Command:List:Group"..msg.chat_id_)
 for k,v in pairs(list) do
@@ -1368,21 +1368,21 @@ redis:del(bot_id.."Command:List:Group"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"⌔︙تم مسح جميع الاوامر التي تم اضافتها")  
 elseif text == "مسح الصلاحيات" and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Validitys:Group"..msg.chat_id_)
 for k,v in pairs(list) do;redis:del(bot_id.."Add:Validity:Group:Rt"..v..msg.chat_id_);redis:del(bot_id.."Validitys:Group"..msg.chat_id_);end
 send(msg.chat_id_, msg.id_,"⌔︙تم مسح صلاحيات المجموعه")
 elseif text == ("قائمه العام") and Dev_Casper(msg) or text == ("المحظورين عام") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Removal:User:Groups")
 Gban = "\n⌔︙قائمة المحظورين عام في البوت\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1399,11 +1399,11 @@ Gban = "⌔︙لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("المطورين") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Developer:Bot")
 Sudos = "\n⌔︙قائمة مطورين في البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1420,11 +1420,11 @@ Sudos = "⌔︙لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, Sudos)
 elseif text == "المنشئين الاساسين" and DeveloperBot(msg) or text == "الاساسين" and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."President:Group"..msg.chat_id_)
 Asase = "\n⌔︙قائمة المنشئين الاساسين في المجموعه\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1443,11 +1443,11 @@ send(msg.chat_id_, msg.id_, Asase)
 elseif text == "المنشئين الاساسين" or text == "الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."President:Group"..msg.chat_id_)
 Asase = "\n⌔︙قائمة المنشئين الاساسين في المجموعه\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1466,11 +1466,11 @@ send(msg.chat_id_, msg.id_, Asase)
 end
 end,nil)
 elseif text == ("المنشئين") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Constructor:Group"..msg.chat_id_)
 Monsh = "\n⌔︙قائمة منشئين المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1487,11 +1487,11 @@ Monsh = "⌔︙لا يوجد منشئين"
 end
 send(msg.chat_id_, msg.id_, Monsh)
 elseif text == ("المدراء") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Manager:Group"..msg.chat_id_)
 Moder = "\n⌔︙قائمة المدراء في المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1508,11 +1508,11 @@ Moder = "⌔︙لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, Moder)
 elseif text == ("الادمنيه") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 local list = redis:smembers(bot_id.."Admin:Group"..msg.chat_id_)
 Admin = "\n⌔︙قائمة الادمنيه في المجموعه\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
@@ -1605,6 +1605,12 @@ Command = "⌔︙لا توجد اوامر اضافيه"
 end
 send(msg.chat_id_, msg.id_,"["..Command.."]")
 elseif text == "تاك للكل" and Admin(msg) then
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
+return false
+end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
 local t = "\n⌔︙ قائمة الاعضاء \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 x = 0
@@ -1620,11 +1626,11 @@ end
 send(msg.chat_id_,msg.id_,t)
 end,nil)
 elseif text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
@@ -1641,11 +1647,11 @@ Kick_Group(result.chat_id_, result.sender_user_id_)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Removal:User:Groups", result.sender_user_id_)
@@ -1653,11 +1659,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم الغاء حظره 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Developer:Bot", result.sender_user_id_)
@@ -1665,11 +1671,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته مطو�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Developer:Bot", result.sender_user_id_)
@@ -1677,11 +1683,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1689,11 +1695,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته منش�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1701,11 +1707,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
@@ -1719,11 +1725,11 @@ end,nil)
 elseif text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."President:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1733,11 +1739,11 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 end,nil)
 elseif text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Constructor:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1745,11 +1751,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته منش�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Constructor:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1757,11 +1763,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Manager:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1769,11 +1775,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته مدي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Manager:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1781,11 +1787,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -1797,11 +1803,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته ادم�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Admin:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1809,11 +1815,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -1825,11 +1831,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم ترقيته ممي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("تنزيل مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Vip:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1837,11 +1843,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم تنزيله من ا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -1868,11 +1874,11 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
@@ -1885,11 +1891,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم الغاء حظره 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"⌔︙عذرآ البوت ليس ادمن") 
@@ -1905,11 +1911,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم كتمه من هنا
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_, result.sender_user_id_)
@@ -1917,11 +1923,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم الغاء كتمه 
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -1933,11 +1939,11 @@ Send_Options(msg,result.sender_user_id_,"reply","⌔︙تم الغاء تقيي�
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام @(.*)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -1961,11 +1967,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر عام @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء العام @(.*)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -1977,11 +1983,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء العام @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^اضف مطور @(.*)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -1997,11 +2003,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^اضف مطور @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^حذف مطور @(.*)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2013,11 +2019,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حذف مطور @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2033,11 +2039,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ اساسي @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2051,11 +2057,11 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل م�
 elseif text and text:match("^رفع منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2076,11 +2082,11 @@ end,nil)
 elseif text and text:match("^تنزيل منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2095,11 +2101,11 @@ return false
 end
 end,nil)
 elseif text and text:match("^رفع منشئ @(.*)$") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2115,11 +2121,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل منشئ @(.*)$") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2131,11 +2137,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل منشئ @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2151,11 +2157,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2167,11 +2173,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل مدير @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2191,11 +2197,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع ادمن @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2207,11 +2213,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل ادمن @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^رفع مميز @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2231,11 +2237,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مميز @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تنزيل مميز @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2337,11 +2343,11 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},status_username,nil) 
 end  
 elseif text and text:match("^حظر @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -2376,11 +2382,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^حظر @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء حظر @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2397,11 +2403,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء حظر @(.*)$") }, FunctionStatus, nil)
 elseif text and text:match("^كتم @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"⌔︙عذرآ البوت ليس ادمن") 
@@ -2425,11 +2431,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^الغاء كتم @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2441,11 +2447,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء كتم @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^تقيد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -2469,10 +2475,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تقيد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match('^تقيد (%d+) (.*) @(.*)$') and Admin(msg) then
-local TextEnd = {string.match(text, "^(تقيد) (%d+) (.*) @(.*)$")}
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,"⌔︙عذرآ البوت ليس ادمن") 
-return false  
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
+return false
 end
 function FunctionStatus(arg, result)
 if (result.id_) then
@@ -2505,11 +2512,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = TextEnd[4]}, FunctionStatus, nil)
 elseif text and text:match("^الغاء تقيد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 function FunctionStatus(arg, result)
 if msg.can_be_deleted_ == false then 
@@ -2525,11 +2532,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^الغاء تقيد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^طرد @(.*)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"⌔︙عذرآ البوت ليس ادمن") 
@@ -2563,11 +2570,11 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$")}, FunctionStatus, nil)
 elseif text and text:match("^حظر عام (%d+)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if Dev_Casper_User(text:match("^حظر عام (%d+)$")) == true then
 send(msg.chat_id_, msg.id_, "⌔︙لا تستطيع حظر المطور الاساسي عام")
@@ -2580,94 +2587,94 @@ end
 redis:sadd(bot_id.."Removal:User:Groups", text:match("^حظر عام (%d+)$"))
 Send_Options(msg,text:match("^حظر عام (%d+)$"),"reply","⌔︙تم حظره عام من المجموعات")  
 elseif text and text:match("^الغاء العام (%d+)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:srem(bot_id.."Removal:User:Groups", text:match("^الغاء العام (%d+)$"))
 Send_Options(msg,text:match("^الغاء العام (%d+)$"),"reply","⌔︙تم الغاء حظره عام من المجموعات")  
 return false
 end
 if text and text:match("^اضف مطور (%d+)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:sadd(bot_id.."Developer:Bot", text:match("^اضف مطور (%d+)$"))
 Send_Options(msg,text:match("^اضف مطور (%d+)$"),"reply","⌔︙تم ترقيته مطور في البوت")  
 elseif text and text:match("^حذف مطور (%d+)$") and Dev_Casper(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:srem(bot_id.."Developer:Bot", text:match("^حذف مطور (%d+)$"))
 Send_Options(msg,text:match("^حذف مطور (%d+)$"),"reply","⌔︙تم تنزيله من المطورين")  
 elseif text and text:match("^رفع منشئ اساسي (%d+)$") and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:sadd(bot_id.."President:Group"..msg.chat_id_, text:match("^رفع منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^رفع منشئ اساسي (%d+)$") ,"reply","⌔︙تم ترقيته منشئ اساسي")  
 elseif text and text:match("^تنزيل منشئ اساسي (%d+)$") and DeveloperBot(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:srem(bot_id.."President:Group"..msg.chat_id_, text:match("^تنزيل منشئ اساسي (%d+)$") )
 Send_Options(msg,text:match("^تنزيل منشئ اساسي (%d+)$") ,"reply","⌔︙تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع منشئ (%d+)$") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:sadd(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^رفع منشئ (%d+)$"))
 Send_Options(msg,text:match("^رفع منشئ (%d+)$"),"reply","⌔︙تم ترقيته منشئ في المجموعه")  
 elseif text and text:match("^تنزيل منشئ (%d+)$") and PresidentGroup(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:srem(bot_id.."Constructor:Group"..msg.chat_id_, text:match("^تنزيل منشئ (%d+)$"))
 Send_Options(msg,text:match("^تنزيل منشئ (%d+)$"),"reply","⌔︙تم تنزيله من المنشئين")  
 elseif text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:sadd(bot_id.."Manager:Group"..msg.chat_id_, text:match("^رفع مدير (%d+)$") )
 Send_Options(msg,text:match("^رفع مدير (%d+)$") ,"reply","⌔︙تم ترقيته مدير المجموعه")  
 elseif text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:srem(bot_id.."Manager:Group"..msg.chat_id_, text:match("^تنزيل مدير (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مدير (%d+)$") ,"reply","⌔︙تم تنزيله من المدراء")  
 elseif text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2676,20 +2683,20 @@ end
 redis:sadd(bot_id.."Admin:Group"..msg.chat_id_, text:match("^رفع ادمن (%d+)$"))
 Send_Options(msg,text:match("^رفع ادمن (%d+)$"),"reply","⌔︙تم ترقيته ادمن للمجموعه")  
 elseif text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:srem(bot_id.."Admin:Group"..msg.chat_id_, text:match("^تنزيل ادمن (%d+)$"))
 Send_Options(msg,text:match("^تنزيل ادمن (%d+)$"),"reply","⌔︙تم تنزيله من ادمنيه المجموعه")  
 elseif text and text:match("^رفع مميز (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 if not Constructor(msg) and redis:get(bot_id.."Status:Cheking:Seted"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2698,20 +2705,20 @@ end
 redis:sadd(bot_id.."Vip:Group"..msg.chat_id_, text:match("^رفع مميز (%d+)$"))
 Send_Options(msg,text:match("^رفع مميز (%d+)$"),"reply","⌔︙تم ترقيته مميز للمجموعه")  
 elseif text and text:match("^تنزيل مميز (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end 
 redis:srem(bot_id.."Vip:Group"..msg.chat_id_, text:match("^تنزيل مميز (%d+)$") )
 Send_Options(msg,text:match("^تنزيل مميز (%d+)$") ,"reply","⌔︙تم تنزيله من المميزين")  
 elseif text and text:match("^حظر (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if not Constructor(msg) and redis:get(bot_id.."Status:Lock:Ban:Group"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -2735,11 +2742,11 @@ Send_Options(msg,text:match("^حظر (%d+)$") ,"reply","⌔︙تم حظره من
 end,nil)   
 end
 elseif text and text:match("^الغاء حظر (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if tonumber(text:match("^الغاء حظر (%d+)$") ) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "⌔︙لا يمكنك عمل هاذا الامر على البوت") 
@@ -2749,11 +2756,11 @@ redis:srem(bot_id.."Removal:User:Group"..msg.chat_id_, text:match("^الغاء �
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = text:match("^الغاء حظر (%d+)$") , status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 Send_Options(msg,text:match("^الغاء حظر (%d+)$") ,"reply","⌔︙تم الغاء حظره من هنا")  
 elseif text and text:match("^كتم (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 if Rank_Checking(text:match("^كتم (%d+)$"), msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n⌔︙لا تستطيع -( حظر , طرد , كتم , تقيد ) : "..Get_Rank(userid,msg.chat_id_).."")
@@ -2766,11 +2773,11 @@ redis:sadd(bot_id.."Silence:User:Group"..msg.chat_id_, text:match("^كتم (%d+)
 Send_Options(msg,text:match("^كتم (%d+)$"),"reply","⌔︙تم كتمه من هنا")  
 end
 elseif text and text:match("^الغاء كتم (%d+)$") and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end
 redis:srem(bot_id.."Silence:User:Group"..msg.chat_id_,text:match("^الغاء كتم (%d+)$") )
 Send_Options(msg,text:match("^الغاء كتم (%d+)$") ,"reply","⌔︙تم الغاء كتمه من هنا")  
@@ -3358,11 +3365,11 @@ elseif text == "تفعيل الرفع" and Constructor(msg) or text == "تفعي
 redis:del(bot_id.."Status:Cheking:Seted"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '⌔︙تم تفعيل رفع - ( الادمن - المميز ) ')
 elseif text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end  
 if redis:sismember(bot_id.."Status:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"⌔︙التثبيت مقفل من قبل المنشئين")  
@@ -3377,11 +3384,11 @@ elseif data.message_ == "CHAT_ADMIN_REQUIRED" then
 send(msg.chat_id_,msg.id_,"⌔︙ليست لدي صلاحية التثبيت .")  
 end;end,nil) 
 elseif text == "الغاء التثبيت" and Admin(msg) then
-local url,res = http.request('https://forhassan.ml/Cispar.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.Casper ~= true then
+if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
-return false 
+return false
 end  
 if redis:sismember(bot_id.."Status:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"⌔︙التثبيت مقفل من قبل المنشئين")  
@@ -3524,6 +3531,12 @@ f:write(test)
 f:close()
 sendDocument(msg.chat_id_, msg.id_,'./Link_Groups.txt', '\nLink_Groups.txt')
 elseif text == "الرابط" then 
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
+return false
+end
 local status_Link = redis:get(bot_id.."Link_Group"..msg.chat_id_)
 if status_Link == true then
 send(msg.chat_id_, msg.id_,"⌔︙جلب الرابط معطل") 
@@ -3936,9 +3949,9 @@ name = math.random(#namebot)
 send(msg.chat_id_, msg.id_, namebot[name]) 
 elseif text == "بوت" then
 local BotName = {
-"باوع لك خليني احبك وصيحلي باسمي "..Name_Bot.. "",
-"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..Name_Bot.. "",
-"راح نموت بكورونا ونته بعدك تصيح بوت"
+"اسمي الانيق "..Name_Bot.. "",
+"يمعود متقرة اسمي "..Name_Bot.. "",
+"تفضل حبي؟ "
 }
 BotNameText = math.random(#BotName)
 send(msg.chat_id_, msg.id_,BotName[BotNameText]) 
@@ -4340,42 +4353,65 @@ send(msg.chat_id_, msg.id_,[[
 ⌔︙`#game` » عدد المجوهرات
 ⌔︙`#AddMem` » عدد الجهات
 ⌔︙`#Description` » تعليق الصوره
-⌔︙ قناة الكلايش • @jEEEEI
+⌔︙ قناة الكلايش • @Gverr
 ]])
 return false  
 elseif text == 'تغير الايدي' and Owner(msg) then 
 local List = {
 [[
-⌔︙Msgs : #msgs
-⌔︙ID : #id
-⌔︙Stast : #stast
-⌔︙UserName : #username
+𖣯 𝕀𝔻 🇮🇶⃤᷂ #id
+𖣯 𝕌𝕊𝔼ℝ 🇮🇶⃤᷂ #username
+𖣯 𝕄𝕊𝔾  🇮🇶⃤᷂ #msgs
+𖣯 𝕊𝕋𝔸𝕋𝔼 🇮🇶⃤᷂ #stast
+𖣯 𝔼𝔻𝕀𝕋 🇮🇶⃤᷂ #edit
 ]],
 [[
-ᯓ 𝟔𝟔𝟔𖡋 #username 
-ᯓ 𝟔𝟔𝟔𖡋 #stast  
-ᯓ 𝟔𝟔𝟔𖡋 #id  
-ᯓ 𝟔𝟔𝟔𖡋 #msgs  
-ᯓ 𝟔𝟔𝟔𖡋 #game
+𝟔𝟔𝟔 𖡋 #username • 𖣰💞
+𝟔𝟔𝟔 𖡋  #stast •𖣰💞
+𝟔𝟔𝟔 𖡋 #id • 𖣰💞
+𝟔𝟔𝟔 𖡋 #gmas • 𖣰💞
+𝟔𝟔𝟔 𖡋 #msgs • 𖣰💞
 ]],
 [[
-☆•𝐮𝐬𝐞𝐫 : #username 𖣬  
-☆•𝐦𝐬𝐠  : #msgs 𖣬 
-☆•𝐬𝐭𝐚 : #stast 𖣬 
-☆•𝐢𝐝  : #id 𖣬
+▽ ¦❀• USER ➭ ⁞ #username .
+▽ ¦❀• 𝙼𝚂𝙶𝚂 ➬ ⁞  #msgs  .
+▽ ¦❀• STAT ➬ ⁞ #stast  .
+▽ ¦❀• 𝙸𝙳  ➬ ⁞ #id  .
 ]],
 [[
-- 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
-- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
-- 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
-- 𓏬 𝐈𝐃 : #id 𓂅 .
+👳🏼‍♂ - 𝄬 username . #username . 🇮🇶
+👳🏼‍♂ - 𝄬 stast . #stast . 🇮🇶
+👳🏼‍♂ - 𝄬 id . #id . 🇮🇶
+👳🏼‍♂ - 𝄬 gmas . #gmas . 🇮🇶
+👳🏼‍♂ - 𝄬 msgs . #msgs . 🇮🇶
 ]],
 [[
-.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , #username  
-.𖣂 𝙨𝙩𝙖𝙨𝙩 , #stast  
-.𖣂 𝙡𝘿 , #id  
-.𖣂 𝙂𝙖𝙢𝙨 , #game 
-.𖣂 𝙢𝙨𝙂𝙨 , #msgs
+𓅓➪:ᗰᔕᘜᔕ : #msgs - ❦ .
+𓅓➪ : Iᗪ : #id - ❦ . 
+𓅓➪ : ᔕTᗩᔕT : #stast - ❦ . 
+𓅓➪ : ᑌᔕᖇᗴᑎᗩᗰᗴ : #username _ ❦ .
+]],
+[[
+¦• 𝚄𝚂𝙴𝚁  ⇉⁞ #username ↝🇵🇷.
+¦• 𝙼𝚂𝙶𝚂 ⇉ ⁞  #msgs  ↝ 🇵🇷.
+¦• 𝚁𝙰𝙽𝙺  ⇉⁞ #stast  ↝🇵🇷.
+¦• 𝙸𝙳 𝚂𝚃𝙰 ⇉ #id  ↝🇵🇷.
+]],
+[[
+• 🖤 | 𝑼𝑬𝑺 :  #username
+
+• 🖤 | 𝑺𝑻𝑨 : #stast
+
+• 🖤 | 𝑰𝑫 :  #id
+
+• 🖤 | 𝑴𝑺𝑮 : #msgs
+]],
+[[
+- ايديڪ  ⁞ #id 💘 ٬
+- يوزرڪ القميل ⁞ #username 💘 ٬
+- رسائلڪ  الطيفهہَ ⁞ #msgs 💘 ٬
+- رتبتڪ الحلوه ⁞ #stast  💘٬
+- سحڪاتڪ الفول ⁞ #edit 💘 ٬
 ]]}
 local Text_Rand = List[math.random(#List)]
 redis:set(bot_id.."Set:Id:Group"..msg.chat_id_,Text_Rand)
@@ -4400,11 +4436,12 @@ local Num_Games = redis:get(bot_id.."Num:Add:Games"..msg.chat_id_..msg.sender_us
 local Add_Mem = redis:get(bot_id.."Num:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
-'ملاك وناسيك بكروبنه😟',
-"حلغوم والله☹️ ",
+'ئنيق وربي 🥺💘',
+"ككيمر نتاا ☹️💜 ",
 "اطلق صوره🐼❤️",
-"كيكك والله🥺",
-"لازك بيها غيرها عاد😒",
+"فستق نتا والله 🥺",
+"حبيتك شني 🤤😂💘",
+"كلساع كالو ايدي 😒",
 }
 local Description = Texting[math.random(#Texting)]
 local Get_Is_Id = redis:get(bot_id.."Set:Id:Group"..msg.chat_id_)
@@ -4717,13 +4754,13 @@ name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","🌟🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
 name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
-name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
+name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨??🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
 name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
 name = string.gsub(name,"👨‍💻","👩‍💻👩‍💻👩‍‍💻👩‍‍💻👩‍💻👨‍💻👩‍💻👩‍💻👩‍💻")
 name = string.gsub(name,"👨‍🔧","👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👨‍🔧👩‍🔧")
-name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍??👨‍🍳👨‍🍳")
+name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍🍳👨‍🍳👨‍🍳")
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
 name = string.gsub(name,"🧜‍♂","🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧚‍♂🧜‍♀🧜‍♀🧜‍♀")
 name = string.gsub(name,"🧝‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♂🧝‍♀🧝‍♀🧝‍♀")
@@ -4769,20 +4806,25 @@ return false
 end
 elseif text == 'السورس' or text == 'سورس' or text == 'ياسورس'  then
 send(msg.chat_id_, msg.id_,[[
-⦑ Welcome to Source ⦒
+⦑ Welcome to Source ⦒ 
 
-𓂅 .Casper TEAM 
+➺ . Casper TEAM 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-𓂅 . [Source Channel](t.me/JJJUU)
+➺ . [Source Channel](t.me/Cisoar)
 
-𓂅 . [Source Info ](t.me/Casper0)     
+➺ . [Source Info ](t.me/Cisper0)     
 
-𓂅 . [Casper iNDT](t.me/Casper0)     
+➺ . [Casper iD](t.me/Gverr)     
  
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-𓂅 . [TWS Casper](t.me/Ub55bot)     
+➺ . [TWS Casper](t.me/Y_8ibot)
 ]]) 
 elseif text == 'الاوامر' and Admin(msg) then
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.infoo ~= true then
+send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
+return false
 send(msg.chat_id_, msg.id_,[[*
 ⌔︙توجد ← 5 اوامر في البوت
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
