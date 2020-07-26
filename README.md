@@ -7,11 +7,11 @@
 ➺ . [Source Channel](https://t.me/joinchat/AAAAAE_EW8h1TxSVmPil5w)
 
 
-➺ . [Source Info ](t.me/Cisparteam)     
+➺ . [Source Info ](https://t.me/joinchat/AAAAAFQVFmdxgOFzBxq96g)     
 
 
-➺ . [Casper iD](t.me/Gverr)     
+➺ . [Casper iD](https://t.me/joinchat/AAAAAFDUWdoKKHcGqny1vA)     
  
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 
-➺ . [TWS Casper](t.me/Y_8ibot)
+➺ . [TWS Casper](https://t.me/Y_8ibot)
