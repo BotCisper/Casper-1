@@ -4,7 +4,7 @@
 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 
-➺ . [Source Channel](t.me/Cispar)
+➺ . [Source Channel](https://t.me/joinchat/AAAAAE_EW8h1TxSVmPil5w)
 
 
 ➺ . [Source Info ](t.me/Cisparteam)     
