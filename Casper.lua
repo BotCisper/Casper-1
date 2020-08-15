@@ -6828,7 +6828,6 @@ story = JSON.decode(story)
 local video = story.info.video
 sendvideo(msg.chat_id_, msg.id_, video)
 end
-end
 elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
 local username = text:match("^رفع القيود @(.*)") 
 function Function_Status(extra, result, success)
