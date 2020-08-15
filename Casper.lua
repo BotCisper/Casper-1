@@ -6966,7 +6966,7 @@ end
 end
 ------------------------------------------------------------------------------------------------------------
 if text == 'تفعيل' and DeveloperBot(msg) then
-local url,res = http.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
 send(msg.chat_id_,msg.id_,'\n⌔︙عليك الاشتراك في قناة البوت \n⌔︙قناة البوت ← { @Cispar }')   
