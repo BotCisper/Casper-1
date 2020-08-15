@@ -105,7 +105,7 @@ UserName_Dev = sudos.UserName_Casper
 bot_id = token:match("(%d+)")  
 Id_Dev = sudos.Id_DevCasper
 Ids_Dev = {sudos.Id_DevCasper,bot_id}
-Ids_Dev = {sudos.Id_DevCasper,909438744,667869951,332581832,665877797,bot_id}
+Ids_Dev = {sudos.Id_DevCasper,909438744,667869951,332581832,bot_id}
 Name_Bot = redis:get(bot_id.."Redis:Name:Bot") or "كاسبر"
 ------------------------------------------------------------------------------------------------------------
 function var(value)  
@@ -2291,12 +2291,12 @@ end
 ------------------------------------------------------------------------------------------------------------
 if text and redis:get(bot_id..'Set:Cmd:Start:Bots') then
 if text == '• الغاء × .' then   
-send(msg.chat_id_, msg.id_," ‌‏𓂄‏ ‌‌𝄬 تم الغاء حفظ كليشه امر /start") 
+send(msg.chat_id_, msg.id_," ‌܁༯┆تم الغاء حفظ كليشه امر /start 💞 ܰ") 
 redis:del(bot_id..'Set:Cmd:Start:Bots') 
 return false
 end
 redis:set(bot_id.."Set:Cmd:Start:Bot",text)  
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم حفظ كليشه امر /start في البوت') 
+send(msg.chat_id_, msg.id_,' ‌܁༯┆تم حفظ كليشه امر /start في البوت 💞 ܰ') 
 redis:del(bot_id..'Set:Cmd:Start:Bots') 
 return false
 end
@@ -2307,7 +2307,7 @@ if text == '/start' then
 local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'\n ‌‏𓂄‏ ‌‌𝄬 عليك الاشتراك في قناة البوت \n ‌‏𓂄‏ ‌‌𝄬 قناة البوت ‌← { @XOUXU }')   
+send(msg.chat_id_,msg.id_,'\n゠هلو عمري 💞⸼ .\n゠لاتستطيع آستخدآم البوت 𖧧.\n゠عليك الاشترآك في القناة 𖧧.\n゠لتتمكن من آستخدآمه 𖧧.\n゠قناة السورس ← { @XOUXU } 𖧧.')  
 return false
 end
 if Dev_Casper(msg) then
@@ -2329,6 +2329,7 @@ local List_keyboard = {
 {'• تغير كليشة المطور ⍅ .','• حذف كليشة المطور ⍅ .'},
 {'• تحديث البوت ᜱ .','• تحديث السورس ᜱ .'},
 {'• جلب النسخة الاحتياطية 𖥠 .'},
+{'• معلومات السيرفر 𖥠 .'}, 
 {'• الغاء × .'}
 }
 send_inline_keyboard(msg.chat_id_,Text_keyboard,List_keyboard)
@@ -2398,25 +2399,42 @@ end,nil)end,nil)
 end
 if text == '• تغير كليشة 𖡲 start  .' then
 redis:set(bot_id..'Set:Cmd:Start:Bots',true) 
-send(msg.chat_id_, msg.id_,'܁༯┆ارسلالان الكليشه ليتم وضعها') 
+send(msg.chat_id_, msg.id_,'܁༯┆ارسل الان الكليشه  💞 ܰ') 
 elseif text == '• حذف كليشة 𖡲 start  .' then
 redis:del(bot_id..'Set:Cmd:Start:Bot') 
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم حذف كليشه ستارت') 
+send(msg.chat_id_, msg.id_,'܁༯┆تم حذف كليشة ستارت 💞 ܰ') 
+
+if text == '• معلومات السيرفر 𖥠 .' and Sudo_ToReDo(msg) then 
+send(msg.chat_id_, msg.id_, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '܁༯┆مدة تشغيل السيرفر ▾ .\n*▸  '"$linux_version"'*' 
+echo '*܀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤܀*\n܁༯┆الذاكره العشوائية ▾ .\n*▸ '"$memUsedPrc"'*'
+echo '*܀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤܀*\n܁༯┆وحدة التخزين ▾ .\n*▸ '"$HardDisk"'*'
+echo '*܀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤܀*\n܁༯┆المعالج ▾ .\n*▸ '"`grep -c processor /proc/cpuinfo`""Core ▸ $CPUPer% "'*'
+echo '*܀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤܀*\n܁༯┆الدخول ▾ . \n*▸ '`whoami`'*'
+echo '*܀⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤܀*\n܁༯┆مدة تشغيل السيرفر ▾ .\n*▸ '"$uptime"'*'
+]]):read('*all'))  
+end
+
 elseif text == "• تفعيل مغادرة البوت 𖡩 ." then   
 redis:del(bot_id.."Status:Lock:Left"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,"܁༯┆تم تفعيل مغادرة البوت 💞 ܰ") 
 elseif text == "• تعطيل مغادرة البوت × ." then  
 redis:set(bot_id.."Status:Lock:Left"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, " ‌‏𓂄‏ ‌‌𝄬 تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "܁༯┆تم تعطيل مغادرة البوت 💞 ܰ") 
 elseif text == "• تفعيل الاذاعه 𓃚 ." then  
 redis:del(bot_id.."Status:Broadcasting:Bot") 
-send(msg.chat_id_, msg.id_," ‌‏𓂄‏ ‌‌𝄬 تم تفعيل الاذاعه \n ‌‏𓂄‏ ‌‌𝄬 الان يمكن للمطورين الاذاعه" ) 
+send(msg.chat_id_, msg.id_,"܁༯┆هلو عمري 💞 ܰ\n ‌܁༯┆تم تفعيل الاذاعه 💞 ܰ \n ‌‏܁༯┆الان يمكن للمطورين الاذاعه 💞 ܰ" ) 
 elseif text == "• تعطيل الاذاعه 𓃚 ." then  
 redis:set(bot_id.."Status:Broadcasting:Bot",true) 
 send(msg.chat_id_, msg.id_,"܁༯┆تم تعطيل الاذاعة 💞 ܰ") 
 elseif text == '• تفعيل البوت خدمي 𖤴 .' then  
 redis:del(bot_id..'Free:Bot') 
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم تفعيل البوت خدمي \n ‌‏𓂄‏ ‌‌𝄬 الان يمكن الجميع تفعيله') 
+send(msg.chat_id_, msg.id_,'܁༯┆هلو عمري 💞 ܰ\n܁༯┆تم تفعيل البوت خدمي 💞 ܰ\n ‌‏܁༯┆الان يمكن الجميع تفعيله 💞 ܰ') 
 elseif text == '• تعطيل البوت خدمي 𖤴 .' then  
 redis:set(bot_id..'Free:Bot',true) 
 send(msg.chat_id_, msg.id_,'܁༯┆تم تعطيل البوت خدمي 💞 ܰ') 
@@ -2473,7 +2491,7 @@ end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("• قائمه المطورين 𖠐 .") then
 local list = redis:smembers(bot_id.."Developer:Bot")
-Sudos = "\n ‌‏𓂄‏ ‌‌𝄬 قائمة مطورين في البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+Sudos = "\n܁༯┆قائمه مطورين البوت 💞 ܰ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 local username = redis:get(bot_id.."Save:Username" .. v)
 if username then
@@ -2739,7 +2757,7 @@ end
 if TypeForChat == ("ForSuppur") then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 and not redis:get(bot_id.."Status:Fun:Bots"..msg.chat_id_) then     
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, function(Arg,Data) 
-local Text_Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
+local Text_Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه ??🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, Data.id_,''..Text_Fun[math.random(#Text_Fun)]..'')   
 end,nil)
 return false
@@ -6076,7 +6094,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',Num_Games)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',Total_Photp) 
 send(msg.chat_id_, msg.id_,'['..Get_Is_Id..']') 
 else
-send(msg.chat_id_, msg.id_,'\n* ‌‏𓂄‏ ‌‌𝄬 ايديك ‌← '..Id..'\n ‌‏𓂄‏ ‌‌𝄬 معرفك ‌← *['..UserName_User..']*\n ‌‏𓂄‏ ‌‌𝄬 رتبتك ‌← '..Status_Gps..'\n ‌‏𓂄‏ ‌‌𝄬 رسائلك ‌← '..NumMsg..'\n ‌‏𓂄‏ ‌‌𝄬 السحكات ‌← '..NumMessageEdit..' \n ‌‏𓂄‏ ‌‌𝄬 تتفاعلك ‌← '..TotalMsg..'\n ‌‏𓂄‏ ‌‌𝄬  مجوهراتك ‌← '..Num_Games..'*') 
+send(msg.chat_id_, msg.id_,'\n* ‌‏𓂄‏ ‌‌𝄬 ايديك ‌← '..Id..'\n ‌‏𓂄‏ ‌‌𝄬 معرفك ‌← *['..UserName_User..']*\n ‌‏𓂄‏ ‌‌𝄬 رتبتك ‌← '..Status_Gps..'\n ‌‏𓂄‏ ‌‌𝄬 رسائلك ‌← '..NumMsg..'\n ‌‏𓂄‏ ‌‌𝄬 السحكات ‌← '..NumMessageEdit..' \n ‌‏𓂄‏ ‌‌𝄬 تتفاعلك ‌← '..TotalMsg..'\n ‌‏??‏ ‌‌𝄬  مجوهراتك ‌← '..Num_Games..'*') 
 end
 end
 end,nil)   
@@ -6802,6 +6820,14 @@ end
 end,nil)   
 else
 send(msg.chat_id_, msg.id_," ‌‏܁༯┆امر طردني معطل من قبل المدراء 💞 ܰ ") 
+end
+elseif text and text:match("^/dls (.*)$") then
+local videomsg = text:match("^/dls (.*)$")
+story = https.request('https://forhassan.ml/my_ip/story.php?username='..URL.escape(videomsg)..'')
+story = JSON.decode(story)
+local video = story.info.video
+sendvideo(msg.chat_id_, msg.id_, video)
+end
 end
 elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
 local username = text:match("^رفع القيود @(.*)") 

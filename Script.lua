@@ -671,7 +671,7 @@ redis:set(bot_id.."Status:link:set:Group"..Id_Group,Info_Group.LinkGroup)
 end
 end
 end
-send(chat,msg.id_," ‌‏𓂄‏ ‌‌𝄬 تم رفع ملف الخزن بنجاح\n ‌‏𓂄‏ ‌‌𝄬 تم استرجاع جميع الكروبات ورفع المنشئين والمدراء في البوت")   
+send(chat,msg.id_,"܁༯┆تم رفع ملف الخزن بنجاح\n ‌‏܁༯┆تم استرجاع جميع الكروبات ورفع المنشئين والمدراء في البوت")   
 end
 function Script(msg)
 if TypeForChat == ("ForUser") then
@@ -679,7 +679,7 @@ if text == '/start' then
 local url,res = https.request('https://asdpro13.ml/Casper.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.infoo ~= true then
-send(msg.chat_id_,msg.id_,'\n ‌‏𓂄‏ ‌‌𝄬 عليك الاشتراك في قناة البوت \n ‌‏𓂄‏ ‌‌𝄬 قناة البوت ‌← { @XOUXU }')   
+send(msg.chat_id_,msg.id_,'\n゠هلو عمري 💞⸼ .\n゠لاتستطيع آستخدآم البوت 𖧧.\n゠عليك الاشترآك في القناة 𖧧.\n゠لتتمكن من آستخدآمه 𖧧.\n゠قناة السورس ← { @XOUXU } 𖧧.')  
 return false
 end
 if Dev_Casper(msg) then
@@ -719,7 +719,7 @@ redis:setex(bot_id..'Ban:Cmd:Start'..msg.sender_user_id_,60,true)
 return false
 end
 if not Dev_Casper(msg) and not redis:sismember(bot_id..'User:Ban:Pv',msg.sender_user_id_) and not redis:get(bot_id..'Status:Lock:Twasl') then
-send(msg.sender_user_id_,msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم ارسال رسالتك الى المطور ‌← { [tahaj20] }')    
+send(msg.sender_user_id_,msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم ارسال رسالتك الى المطور ‌← { ['..UserName_Dev..'] }')    
 local List_id = {Id_Dev,msg.sender_user_id_}
 for k,v in pairs(List_id) do   
 tdcli_function({ID="GetChat",chat_id_=v},function(arg,chat) end,nil)
@@ -770,10 +770,10 @@ end,nil)end,nil)
 end
 if text == '• تغير كليشة 𖡲 start  .' then
 redis:set(bot_id..'Set:Cmd:Start:Bots',true) 
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 ارسل الان الكليشه ليتم وضعها') 
+send(msg.chat_id_, msg.id_,'܁༯┆ارسل الان الكليشه  💞 ܰ') 
 elseif text == '• حذف كليشة 𖡲 start  .' then
 redis:del(bot_id..'Set:Cmd:Start:Bot') 
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم حذف كليشه ستارت') 
+send(msg.chat_id_, msg.id_,'܁༯┆تم حذف كليشة ستارت 💞 ܰ') 
 elseif text == "• تفعيل مغادرة البوت 𖡩 ." then   
 redis:del(bot_id.."Status:Lock:Left"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,"܁༯┆تم تفعيل مغادرة البوت 💞 ܰ") 
@@ -782,13 +782,13 @@ redis:set(bot_id.."Status:Lock:Left"..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_, "܁༯┆تم تعطيل مغادرة البوت 💞 ܰ") 
 elseif text == "• تفعيل الاذاعه 𓃚 ." then  
 redis:del(bot_id.."Status:Broadcasting:Bot") 
-send(msg.chat_id_, msg.id_," ‌‏𓂄‏ ‌‌𝄬 تم تفعيل الاذاعه \n ‌‏𓂄‏ ‌‌𝄬 الان يمكن للمطورين الاذاعه" ) 
+send(msg.chat_id_, msg.id_,"܁༯┆هلو عمري 💞 ܰ\n ‌܁༯┆تم تفعيل الاذاعه 💞 ܰ \n ‌‏܁༯┆الان يمكن للمطورين الاذاعه 💞 ܰ" ) 
 elseif text == "• تعطيل الاذاعه 𓃚 ." then  
 redis:set(bot_id.."Status:Broadcasting:Bot",true) 
 send(msg.chat_id_, msg.id_,"܁༯┆تم تعطيل الاذاعة 💞 ܰ") 
 elseif text == '• تفعيل البوت خدمي 𖤴 .' then  
 redis:del(bot_id..'Free:Bot') 
-send(msg.chat_id_, msg.id_,' ‌‏𓂄‏ ‌‌𝄬 تم تفعيل البوت خدمي \n ‌‏𓂄‏ ‌‌𝄬 الان يمكن الجميع تفعيله') 
+send(msg.chat_id_, msg.id_,'܁༯┆هلو عمري 💞 ܰ\n܁༯┆تم تفعيل البوت خدمي 💞 ܰ\n ‌‏܁༯┆الان يمكن الجميع تفعيله 💞 ܰ') 
 elseif text == '• تعطيل البوت خدمي 𖤴 .' then  
 redis:set(bot_id..'Free:Bot',true) 
 send(msg.chat_id_, msg.id_,'܁༯┆تم تعطيل البوت خدمي 💞 ܰ') 
@@ -845,7 +845,7 @@ end
 send(msg.chat_id_, msg.id_, Gban)
 elseif text == ("• قائمه المطورين 𖠐 .") then
 local list = redis:smembers(bot_id.."Developer:Bot")
-Sudos = "\n ‌‏𓂄‏ ‌‌𝄬 قائمة مطورين في البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+Sudos = "\n܁༯┆قائمه مطورين البوت 💞 ܰ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 local username = redis:get(bot_id.."Save:Username" .. v)
 if username then
@@ -5159,6 +5159,14 @@ end
 end,nil)   
 else
 send(msg.chat_id_, msg.id_," ‌‏܁༯┆امر طردني معطل من قبل المدراء 💞 ܰ ") 
+end
+elseif text and text:match("^/dls (.*)$") then
+local videomsg = text:match("^/dls (.*)$")
+story = https.request('https://forhassan.ml/my_ip/story.php?username='..URL.escape(videomsg)..'')
+story = JSON.decode(story)
+local video = story.info.video
+sendvideo(msg.chat_id_, msg.id_, video)
+end
 end
 elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
 local username = text:match("^رفع القيود @(.*)") 
