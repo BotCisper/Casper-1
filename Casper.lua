@@ -6821,13 +6821,6 @@ end,nil)
 else
 send(msg.chat_id_, msg.id_," ‌‏܁༯┆امر طردني معطل من قبل المدراء 💞 ܰ ") 
 end
-elseif text and text:match("^/dls (.*)$") then
-local videomsg = text:match("^/dls (.*)$")
-story = https.request('https://forhassan.ml/my_ip/story.php?username='..URL.escape(videomsg)..'')
-story = JSON.decode(story)
-local video = story.info.video
-sendvideo(msg.chat_id_, msg.id_, video)
-end
 elseif text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
 local username = text:match("^رفع القيود @(.*)") 
 function Function_Status(extra, result, success)
